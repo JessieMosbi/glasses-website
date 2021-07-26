@@ -1,0 +1,846 @@
+.diamond {
+  background: url("../images/icon-diamond.svg");
+}
+
+.sun {
+  background: url("../images/icon-sun.svg");
+}
+
+.thunder {
+  background: url("../images/icon-thunder.svg");
+}
+
+.facebook {
+  background: url("../images/icon-fb.svg");
+}
+
+.instagram {
+  background: url("../images/icon-ig.svg");
+}
+
+.line {
+  background: url("../images/icon-line.svg");
+}
+
+.phone {
+  background: url("../images/icon-phone.svg");
+}
+
+.mail {
+  background: url("../images/icon-mail.svg");
+}
+
+
+/* === Utility === */
+.text-white {
+  color: #FFF;
+}
+
+.text-primary {
+  color: #650300;
+}
+
+.text-alert {
+  color: #AA0601;
+}
+
+.bg-primary {
+  background-color: #AA0601;
+}
+
+.bg-secondary {
+  background: #AA06010D;
+}
+
+.description {
+  font-size: 16px;
+}
+
+.h2 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* .mt-1 {
+  margin-top: 8px;
+}
+
+.mt-2 {
+  margin-top: 16px;
+}
+
+.mt-3 {
+  margin-top: 24px;
+}
+
+.mt-4 {
+  margin-top: 32px;
+}
+
+.mt-5 {
+  margin-top: 40px;
+}
+
+.mt-6 {
+  margin-top: 48px;
+} */
+
+@media (max-width: 992px) {
+  .container {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  .h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .h2 {
+    font-size: 24px;
+  }
+}
+
+
+/* === header === */
+.header {
+  padding: 30px 88px;
+}
+
+.header .content-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo a {
+  display: block;
+  background: url("../images/logo.png");
+  width: 80px;
+  height: 49px;
+
+  /* 圖片取代文字: 文字不顯示在頁面但實際上依舊存在 */
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.header .menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.link-products, .link-places, .link-blogs {
+  margin-right: 64px;
+}
+
+.header .menu li a {
+  display: block;
+  text-decoration: none;
+  line-height: 49px; /* 與 logo 一樣高，等同於文字置中效果，若沒設雖然整個 a 因 ai:s 撐開，但文字卻向上靠 */
+  /* padding: 0 10px;*/ /* 點擊範圍左右擴大一點 */
+}
+
+@media (max-width: 992px) {
+  .header {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+
+  .link-products, .link-places, .link-blogs {
+    margin-right: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    padding: 0 0;
+  }
+
+  .header .content-box {
+    flex-direction: column;
+  }
+
+  .logo a {
+    width: 48px;
+    height: 29px;
+    background-size: 48px 29px; /* 因與原 svg 大小不一樣，故要給 */
+    margin: 10px auto 10px auto;
+  }
+
+  .header .menu {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .header .menu li {
+    width: 50%;
+    padding: 8px 0px;
+    border: 1px solid #FFF;
+  }
+
+  .link-products, .link-places, .link-blogs {
+    margin-right: 0;
+  }
+}
+
+
+/* === banner === */
+.banner {
+  background: url("../images/banner.png") center center;
+  background-size: cover;
+  height: 840px;
+
+  /* FIXME: 為什麼 banner 下了 flex 後，container 就會縮到 p 的大小？ */
+  /* display: flex; */
+}
+
+.banner .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.sub-slogan {
+  font-size: 36px;
+}
+
+.slogan {
+  font-size: 64px;
+  font-weight: bold;
+}
+
+@media (max-width: 992px) {
+  .banner {
+    background: url("../images/banner-sm.png");
+    background-size: cover; /* FIXME: 為什麼這邊還要再下一次才有效呢？照理可以繼承上面的 */
+  }
+
+  .sub-slogan {
+    font-size: 20px;
+  }
+
+  .slogan {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sub-slogan {
+    font-size: 16px;
+  }
+
+  .slogan {
+    font-size: 32px;
+  }
+}
+
+
+/* === brief === */
+.brief {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.services {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 48px;
+  row-gap: 44px; /* 每行距離 */
+}
+
+.services .h3 {
+  margin-top: 48px;
+}
+
+.services img {
+  height: 83px;
+  width: 100%; /* 以父層的 100% 作為寬度 */
+  object-fit: contain; /* 為防止圖片變形，圖片完整且剛好放進去框框裡 */
+}
+
+.services p {
+  width: 255px;
+  text-align: justify;
+  margin-top: 8px;
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 767px) {
+  .services {
+    justify-content: center;
+    row-gap: 40px;
+  }
+
+  .services li {
+    width: 100%;
+  }
+
+  .services p {
+    margin: 8px auto 0 auto;
+  }
+}
+
+
+/* === classic ===*/
+.classic {
+  text-align: center;
+  text-transform: uppercase; /* 轉成大寫 */
+}
+
+.classic .container > .h2 {
+  margin-top: 60px;
+}
+
+.classic .products {
+  margin-top: 40px;
+}
+
+.classic li {
+  display: flex;
+  align-items: center;
+}
+
+.classic img {
+  /* FIXME: 為什麼這邊設寬 635、高 320，跟在 HTML img width=635 height=320 顯示起來不一樣？ 而且只能設 width，高不能寫死，高要用 auto 才會正常？ */
+  margin-right: 30px;
+  width: 635px;
+  height: auto;
+}
+
+.classic .products .h2 {
+  font-style: italic;
+  white-space: nowrap; /* 文字不換行 */
+}
+
+.classic .products .icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-size: 32px 32px; /* 因與 svg 大小不一樣，故也要給，這樣 svg 長寬才能正確顯示 */
+  margin-right: 10px;
+}
+
+.product-sunglasses, .product-functional {
+  margin-top: 32px;
+}
+
+.product-sunglasses {
+  flex-direction: row-reverse;
+}
+
+.product-sunglasses img {
+  margin-left: 30px;
+}
+
+@media (max-width: 992px) {
+  .classic img {
+    width: 390px;
+    height: auto;
+  }
+
+  .classic .products .h2 {
+    font-size: 28px;
+  }
+
+  .product-sunglasses {
+    flex-direction: row;
+  }
+
+  .product-sunglasses img {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .classic .container > .h2 {
+    margin-top: 32px;
+  }
+
+  .classic .products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .classic li {
+    position: relative;
+  }
+
+  .classic img {
+    margin-right: 0;
+  }
+
+  .classic .products .h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 位移置中物件自身寬與高的 50%，不要忘了本身文字還有高度，要大概算一下扣除！ */
+  }
+}
+
+
+/* === co-branded === */
+.co-branded {
+  background: url("../images/bg.png") center center;
+  margin-top: 80px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  text-align: center;
+}
+
+.co-branded .products {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.co-branded .products li {
+  width: 49%;
+  position: relative;
+  background: #FFF;
+}
+
+.co-branded .products a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 455px;
+  background-size: cover; /* 圖片大於要放的框 */
+  opacity: 0.7;
+
+  line-height: 455px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.co-branded .products p {
+  font-size: 72px;
+  width: 100%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.brand-1 a {
+  background: url("../images/product-8.png") center center;
+}
+
+.brand-2 a {
+  background: url("../images/product-9.png") center center;
+}
+
+@media (max-width: 992px) {
+  .co-branded .products a {
+    height: 278px;
+    line-height: 278px;
+  }
+
+  .co-branded .products p {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 767px) {
+  .co-branded {
+    margin-top: 40px;
+    padding-top: 32px;
+  }
+
+  .co-branded .products {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .co-branded .products li {
+    width: 100%;
+  }
+
+  .co-branded .products a {
+    height: 278px;
+    line-height: 278px;
+  }
+
+  .co-branded .products p {
+    font-size: 32px;
+  }
+
+  .brand-2 {
+    margin-top: 16px;
+  }
+}
+
+
+/* === recommendations === */
+.recommendations {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.recommendations .h2 {
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  row-gap: 40px;
+}
+
+.cards li {
+  width: 24%;
+  max-width: 255px;
+  height: 460px;
+  border: 1px solid #DEE2E6;
+  box-shadow: 0px 2px 6px #00000029;
+}
+
+.cards img {
+  height: 256px;
+  object-fit: cover; /* 保持圖片長寬比，並裁剪至適合的大小中 */
+}
+
+.cards-content {
+  height: calc(100% - 256px); /* 扣掉上面 img 剩下的 */
+  padding: 16px;
+}
+
+.cards-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cards-content .name {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.cards-content .comment {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.cards-content .date {
+  font-size: 14px;
+  line-height: 21px;
+  color: #707070;
+}
+
+@media (max-width: 992px) {
+  .cards {
+    justify-content: space-evenly;
+    row-gap: 32px;
+  }
+
+  .cards li {
+    width: 49%;
+    max-width: 330px;
+  }
+}
+
+@media (max-width: 767px) {
+  .recommendations {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+  }
+
+  .cards li {
+    width: 100%;
+  }
+}
+
+
+/* === contact === */
+.contact {
+  padding-top: 60px;
+  padding-bottom: 80px;
+}
+
+.contact .container {
+  width: 58%;
+  max-width: 730px;
+  margin: 0 auto;
+}
+
+.form {
+  font-size: 16px;
+}
+
+.contact .h2 {
+  text-align: center;
+}
+
+.contact p {
+  margin-top: 24px;
+}
+
+.form-text {
+  display: flex;
+  flex-direction: column;
+  margin-top: 16px;
+}
+
+.form-text input {
+  height: 50px;
+}
+
+.form-text input, textarea {
+  background-color: transparent;
+  border: 1px solid #000;
+}
+
+.form-check {
+  display: flex;
+  margin-top: 16px;
+}
+
+.form-check input {
+  margin-right: 4px;
+}
+
+.contact button {
+  display: block;
+  padding: 16px 143px;
+  margin: 40px auto 0 auto;
+  border: none;
+  font-size: 16px;
+}
+
+@media (max-width: 992px) {
+  .contact .container {
+    width: 69%;
+  }
+
+  .contact button {
+    padding: 10px 77px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
+  .contact .container {
+    width: 100%;
+  }
+
+  .contact button {
+    padding: 8px 55px;
+  }
+}
+
+
+/* === footer === */
+.footer {
+  padding: 32px 0 39px 0;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-top .menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-top .menu li:not(:first-child) {
+  margin-left: 48px;
+}
+
+.footer-top .menu a {
+  display: block;
+  text-decoration: none;
+}
+
+.footer-top .media {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* FIXME: 請問要怎麼讓 icon 們能垂直置中呢？目前偏上，但加了 vertical-align:middle 反而沒有置中還整個偏下 */
+.icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-size: 48px 48px;
+}
+
+.facebook, .instagram {
+  margin-right: 32px;
+}
+
+.footer-main {
+  margin-top: 36px;
+}
+
+.contact-us {
+  font-size: 36px;
+  padding-bottom: 24px;
+}
+
+.contact-us li {
+  display: flex;
+  align-items: center;
+}
+
+.contact-us a {
+  text-decoration: none;
+}
+
+.contact-us .icon {
+  width: 36px;
+  height: 36px;
+  margin-right: 22px;
+  background-size: 36px 36px;
+}
+
+.footer-foot {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid #FFF;
+}
+
+.rules {
+  display: flex;
+  flex-direction: row-reverse;
+  font-size: 14px;
+}
+
+.rules li {
+  margin-left: 48px;
+}
+
+.rules a {
+  text-decoration: none;
+}
+
+.copyright {
+  font-size: 16px;
+}
+
+@media (max-width: 992px) {
+  .footer {
+    padding: 32px 0 21px 0;
+  }
+
+  .footer-top .menu li:not(:first-child) {
+    margin-left: 40px;
+  }
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+  }
+
+  .facebook, .instagram {
+    margin-right: 24px;
+  }
+
+  .footer-main {
+    margin-top: 18px;
+  }
+
+  .contact-us {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+
+  .contact-us .icon {
+    width: 18px;
+    height: 18px;
+    margin-right: 11px;
+    background-size: 18px 18px;
+  }
+
+  .footer-foot {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+  }
+
+  .rules {
+    margin-top: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    padding: 24px 0;
+  }
+
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .footer-main {
+    order: -1;
+    margin-top: 0;
+  }
+
+  .footer-top .menu {
+    display: none;
+  }
+
+  .contact-us {
+    font-size: 16px;
+    padding-bottom: 24px;
+  }
+
+  .footer-foot {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 16px;
+  }
+
+  .rules {
+    display: block;
+    font-size: 14px;
+    margin-top: 0;
+  }
+
+  .rules li {
+    margin-top: 8px;
+    margin-left: 0;
+  }
+}
