@@ -5,3 +5,41 @@ body {
   font-size: 20px;
   line-height: 1.5;
 }
+
+a {
+  text-decoration: none;
+}
+
+.icon {
+  &.diamond {
+    background: url($icon-diamond);
+  }
+
+  &.sun {
+    background: url($icon-sun);
+  }
+
+  &.thunder {
+    background: url($icon-thunder);
+  }
+
+  &.facebook {
+    background: url($icon-facebook);
+  }
+
+  &.instagram {
+    background: url($icon-instagram);
+  }
+
+  &.line {
+    background: url($icon-line);
+  }
+
+  &.phone {
+    background: url($icon-phone);
+  }
+
+  &.mail {
+    background: url($icon-mail);
+  }
+}
