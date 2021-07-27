@@ -4,3 +4,34 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+
+@media (max-width: 992px) {
+  .container {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.header {
+  background-color: $bg-primary;
+
+  .menu a {
+    color: $text-white;
+  }
+}
+
+.footer {
+  background-color: $bg-primary;
+  color: $text-white;
+
+  a {
+    color: $text-white;
+  }
+}

@@ -1,111 +1,54 @@
-.diamond {
-  background: url("../images/icon-diamond.svg");
-}
+.icon {
+  &.diamond {
+    background: url($icon-diamond);
+  }
 
-.sun {
-  background: url("../images/icon-sun.svg");
-}
+  &.sun {
+    background: url($icon-sun);
+  }
 
-.thunder {
-  background: url("../images/icon-thunder.svg");
-}
+  &.thunder {
+    background: url($icon-thunder);
+  }
 
-.facebook {
-  background: url("../images/icon-fb.svg");
-}
+  &.facebook {
+    background: url($icon-facebook);
+  }
 
-.instagram {
-  background: url("../images/icon-ig.svg");
-}
+  &.instagram {
+    background: url($icon-instagram);
+  }
 
-.line {
-  background: url("../images/icon-line.svg");
-}
+  &.line {
+    background: url($icon-line);
+  }
 
-.phone {
-  background: url("../images/icon-phone.svg");
-}
+  &.phone {
+    background: url($icon-phone);
+  }
 
-.mail {
-  background: url("../images/icon-mail.svg");
-}
-
-/* === Utility === */
-.text-white {
-  color: #fff;
-}
-
-.text-primary {
-  color: #650300;
-}
-
-.text-alert {
-  color: #aa0601;
-}
-
-.bg-primary {
-  background-color: #aa0601;
-}
-
-.bg-secondary {
-  background: #aa06010d;
-}
-
-.description {
-  font-size: 16px;
+  &.mail {
+    background: url($icon-mail);
+  }
 }
 
 .h2 {
   font-size: 48px;
-  font-weight: bold;
+  font-weight: $weight-bold;
 }
 
 .h3 {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: $weight-bold;
 }
-
-/* .mt-1 {
-  margin-top: 8px;
-}
-
-.mt-2 {
-  margin-top: 16px;
-}
-
-.mt-3 {
-  margin-top: 24px;
-}
-
-.mt-4 {
-  margin-top: 32px;
-}
-
-.mt-5 {
-  margin-top: 40px;
-}
-
-.mt-6 {
-  margin-top: 48px;
-} */
 
 @media (max-width: 992px) {
-  .container {
-    padding-left: 39px;
-    padding-right: 39px;
-  }
-
   .h2 {
     font-size: 32px;
   }
 }
 
 @media (max-width: 767px) {
-  .container {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
   .h2 {
     font-size: 24px;
   }
@@ -180,7 +123,7 @@
       li {
         width: 50%;
         padding: 8px 0px;
-        border: 1px solid #fff;
+        border: 1px solid $white;
       }
     }
   }
@@ -213,6 +156,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    color: $text-primary;
   }
 }
 
@@ -222,7 +166,7 @@
 
 .slogan {
   font-size: 64px;
-  font-weight: bold;
+  font-weight: $weight-bold;
 }
 
 @media (max-width: 992px) {
@@ -255,6 +199,11 @@
   padding-top: 60px;
   padding-bottom: 80px;
   text-align: center;
+  background-color: $bg-secondary;
+
+  .h2 {
+    color: $text-primary;
+  }
 }
 
 .services {
@@ -266,6 +215,7 @@
 
   .h3 {
     margin-top: 48px;
+    color: $text-primary;
   }
 
   img {
@@ -306,6 +256,7 @@
 
   .container > .h2 {
     margin-top: 60px;
+    color: $text-primary;
   }
 
   .products {
@@ -313,7 +264,9 @@
 
     .h2 {
       font-style: italic;
+      font-weight: $weight-black;
       white-space: nowrap; /* 文字不換行 */
+      color: $text-alert;
     }
 
     .icon {
@@ -413,16 +366,18 @@
   padding-top: 60px;
   padding-bottom: 80px;
   text-align: center;
+  color: $text-white;
 
   .products {
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
+    color: $text-alert;
 
     li {
       width: 49%;
       position: relative;
-      background: #fff;
+      background: $white;
     }
 
     a {
@@ -510,6 +465,7 @@
 
   .h2 {
     text-align: center;
+    color: $text-primary;
   }
 }
 
@@ -554,7 +510,7 @@
   .date {
     font-size: 14px;
     line-height: 21px;
-    color: #707070;
+    color: $gray-1;
   }
 }
 
@@ -593,6 +549,7 @@
 .contact {
   padding-top: 60px;
   padding-bottom: 80px;
+  background-color: $bg-secondary;
 
   .container {
     width: 58%;
@@ -614,6 +571,8 @@
     margin: 40px auto 0 auto;
     border: none;
     font-size: 16px;
+    background-color: $bg-primary;
+    color: $text-white;
   }
 }
 
@@ -633,7 +592,7 @@
   input,
   textarea {
     background-color: transparent;
-    border: 1px solid #000;
+    border: 1px solid $black;
   }
 }
 
@@ -747,7 +706,7 @@
   display: flex;
   justify-content: space-between;
   padding-top: 32px;
-  border-top: 1px solid #fff;
+  border-top: 1px solid $white;
 }
 
 .rules {
