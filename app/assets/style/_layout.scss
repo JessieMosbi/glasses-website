@@ -31,15 +31,10 @@
   }
 
   .logo a {
-    display: block;
+    @include hide-text-in-image;
     background: url("../images/logo.png");
     width: 80px;
     height: 49px;
-
-    /* 圖片取代文字: 文字不顯示在頁面但實際上依舊存在 */
-    text-indent: 101%;
-    white-space: nowrap;
-    overflow: hidden;
   }
 
   .menu {
@@ -83,6 +78,13 @@
       flex-direction: column;
     }
 
+    .logo a {
+      @include create-icon(48px, 29px);
+      @include horizontal-center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
     .menu {
       flex-wrap: wrap;
       text-align: center;
@@ -93,13 +95,6 @@
         border: 1px solid $white;
       }
     }
-  }
-
-  .logo a {
-    width: 48px;
-    height: 29px;
-    background-size: 48px 29px; /* 因與原 svg 大小不一樣，故要給 */
-    margin: 10px auto 10px auto;
   }
 
   .link-products,
@@ -145,10 +140,7 @@
 
     /* FIXME: 請問要怎麼讓 icon 們能垂直置中呢？目前偏上，但加了 vertical-align:middle 反而沒有置中還整個偏下 */
     .icon {
-      display: block;
-      width: 48px;
-      height: 48px;
-      background-size: 48px 48px;
+      @include create-icon(48px, 48px);
     }
   }
 }
@@ -169,18 +161,24 @@
   li {
     display: flex;
     align-items: center;
+
+    .icon {
+      @include create-icon(36px, 36px);
+      margin-right: 22px;
+    }
   }
 
   a {
     text-decoration: none;
   }
 
-  .icon {
-    width: 36px;
-    height: 36px;
-    margin-right: 22px;
-    background-size: 36px 36px;
-  }
+  /* FIXME: 為什麼寫在這裡，瀏覽器就會把 bgsize 給刪掉呢？ */
+  // .icon {
+  //   width: 36px;
+  //   height: 36px;
+  //   margin-right: 22px;
+  //   background-size: 36px 36px;
+  // }
 }
 
 .footer-foot {
@@ -222,14 +220,12 @@
 
     .media {
       .icon {
-        width: 24px;
-        height: 24px;
-        background-size: 24px 24px;
+        @include create-icon(24px, 24px);
       }
     }
   }
 
-  /* 為什麼寫在這裡，瀏覽器就會把 bgsize 給刪掉呢？ */
+  /* FIXME: 為什麼寫在這裡，瀏覽器就會把 bgsize 給刪掉呢？ */
   // .icon {
   //   width: 24px;
   //   height: 24px;
@@ -249,11 +245,9 @@
     font-size: 20px;
     padding-bottom: 20px;
 
-    .icon {
-      width: 18px;
-      height: 18px;
+    li .icon {
+      @include create-icon(18px, 18px);
       margin-right: 11px;
-      background-size: 18px 18px;
     }
   }
 

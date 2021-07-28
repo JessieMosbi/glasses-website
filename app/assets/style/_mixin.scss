@@ -1,0 +1,38 @@
+/* 水平置中效果 */
+@mixin horizontal-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 圖片取代文字: 文字不顯示在頁面但實際上依舊存在 */
+@mixin hide-text-in-image {
+  display: block;
+  text-indent: 101%; /* 首行縮排 */
+  white-space: nowrap; /* 自動隱藏超出的文字或圖片 */
+  overflow: hidden; /* 使元素在第一排上面，不斷行 */
+}
+
+@mixin create-icon($width, $height) {
+  display: block;
+  width: $width;
+  height: $height;
+  /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+  background-size: $width $height;
+}
+
+@mixin display-same-height-images($height) {
+  height: $height;
+  width: 100%; /* 以父層的 100% 作為寬度 */
+  object-fit: contain; /* 為防止圖片變形，圖片完整且剛好放進去框框裡 */
+}
+
+@mixin text-on-image-center($type) {
+  @if $type == parent {
+    position: relative;
+  } @else if $type == child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 位移置中物件自身寬與高的 50%，不要忘了本身文字還有高度，要大概算一下扣除！ */
+  }
+}

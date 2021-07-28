@@ -97,9 +97,7 @@
   }
 
   img {
-    height: 83px;
-    width: 100%; /* 以父層的 100% 作為寬度 */
-    object-fit: contain; /* 為防止圖片變形，圖片完整且剛好放進去框框裡 */
+    @include display-same-height-images(83px);
   }
 
   p {
@@ -122,7 +120,8 @@
     }
 
     p {
-      margin: 8px auto 0 auto;
+      @include horizontal-center;
+      margin-top: 8px;
     }
   }
 }
@@ -148,10 +147,8 @@
     }
 
     .icon {
+      @include create-icon(32px, 32px);
       display: inline-block;
-      width: 32px;
-      height: 32px;
-      background-size: 32px 32px; /* 因與 svg 大小不一樣，故也要給，這樣 svg 長寬才能正確顯示 */
       margin-right: 10px;
     }
   }
@@ -216,23 +213,17 @@
       flex-direction: column;
       align-items: center;
 
-      .h2 {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(
-          -50%,
-          -50%
-        ); /* 位移置中物件自身寬與高的 50%，不要忘了本身文字還有高度，要大概算一下扣除！ */
+      li {
+        @include text-on-image-center(parent);
       }
-    }
 
-    li {
-      position: relative;
-    }
+      img {
+        margin-right: 0;
+      }
 
-    img {
-      margin-right: 0;
+      .h2 {
+        @include text-on-image-center(child);
+      }
     }
   }
 }
@@ -254,7 +245,7 @@
 
     li {
       width: 49%;
-      position: relative;
+      @include text-on-image-center(parent);
       background: $white;
     }
 
@@ -269,17 +260,12 @@
 
       line-height: 455px;
       font-weight: bold;
-      text-decoration: none;
     }
 
     p {
       font-size: 72px;
       width: 100%;
-
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      @include text-on-image-center(child);
     }
   }
 }
@@ -432,7 +418,6 @@
   .container {
     width: 58%;
     max-width: 730px;
-    margin: 0 auto;
   }
 
   .h2 {
@@ -446,7 +431,8 @@
   button {
     display: block;
     padding: 16px 143px;
-    margin: 40px auto 0 auto;
+    @include horizontal-center;
+    margin-top: 40px;
     border: none;
     font-size: 16px;
     background-color: $bg-primary;
