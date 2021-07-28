@@ -1,6 +1,9 @@
 @import "variable"; // 變數
-@import "reset"; // reset.css
-@import "mixin"; // mixin.css
+@import "reset"; // reset
+@import "mixin"; // mixin
 @import "basic"; // 全站樣式
-@import "layout"; // 共同框架
-@import "index"; // 首頁
+@import "layout"; // 共同區塊
+// @import "module"; // 常用樣式 button, form, table...
+
+// page
+@import "page/index"; // 首頁
