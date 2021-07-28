@@ -3,17 +3,13 @@
   margin: 0 auto;
   padding-left: 15px;
   padding-right: 15px;
-}
 
-@media (max-width: 992px) {
-  .container {
+  @include pad {
     padding-left: 39px;
     padding-right: 39px;
   }
-}
 
-@media (max-width: 767px) {
-  .container {
+  @include phone {
     padding-left: 15px;
     padding-right: 15px;
   }
@@ -24,10 +20,22 @@
   padding: 30px 88px;
   background-color: $bg-primary;
 
+  @include pad {
+    padding-left: 39px;
+    padding-right: 39px;
+  }
+  @include phone {
+    padding: 0 0;
+  }
+
   .content-box {
     width: 100%;
     display: flex;
     justify-content: space-between;
+
+    @include phone {
+      flex-direction: column;
+    }
   }
 
   .logo a {
@@ -35,18 +43,37 @@
     background: url("../images/logo.png");
     width: 80px;
     height: 49px;
+
+    @include phone {
+      @include create-icon(48px, 29px);
+      @include horizontal-center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
   }
 
   .menu {
     display: flex;
     justify-content: space-between;
 
-    li a {
-      display: block;
-      text-decoration: none;
-      line-height: 49px; /* 與 logo 一樣高，等同於文字置中效果，若沒設雖然整個 a 因 ai:s 撐開，但文字卻向上靠 */
-      /* padding: 0 10px;*/ /* 點擊範圍左右擴大一點 */
-      color: $text-white;
+    @include phone {
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    li {
+      a {
+        display: block;
+        text-decoration: none;
+        line-height: 49px; /* 與 logo 一樣高，等同於文字置中效果，若沒設雖然整個 a 因 ai:s 撐開，但文字卻向上靠 */
+        /* padding: 0 10px;*/ /* 點擊範圍左右擴大一點 */
+        color: $text-white;
+      }
+      @include phone {
+        width: 50%;
+        padding: 8px 0px;
+        border: 1px solid $white;
+      }
     }
   }
 }
@@ -55,51 +82,12 @@
 .link-places,
 .link-blogs {
   margin-right: 64px;
-}
 
-@media (max-width: 992px) {
-  .header {
-    padding-left: 39px;
-    padding-right: 39px;
-  }
-
-  .link-products,
-  .link-places,
-  .link-blogs {
+  @include pad {
     margin-right: 40px;
   }
-}
 
-@media (max-width: 767px) {
-  .header {
-    padding: 0 0;
-
-    .content-box {
-      flex-direction: column;
-    }
-
-    .logo a {
-      @include create-icon(48px, 29px);
-      @include horizontal-center;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    .menu {
-      flex-wrap: wrap;
-      text-align: center;
-
-      li {
-        width: 50%;
-        padding: 8px 0px;
-        border: 1px solid $white;
-      }
-    }
-  }
-
-  .link-products,
-  .link-places,
-  .link-blogs {
+  @include phone {
     margin-right: 0;
   }
 }
@@ -113,6 +101,21 @@
   a {
     color: $text-white;
   }
+
+  @include pad {
+    padding: 32px 0 21px 0;
+  }
+  @include phone {
+    padding: 24px 0;
+  }
+
+  .container {
+    @include phone {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
 }
 
 .footer-top {
@@ -124,8 +127,18 @@
     justify-content: space-between;
     align-items: center;
 
-    li:not(:first-child) {
-      margin-left: 48px;
+    @include phone {
+      display: none;
+    }
+
+    li {
+      &:not(:first-child) {
+        margin-left: 48px;
+
+        @include pad {
+          margin-left: 40px;
+        }
+      }
     }
 
     a {
@@ -141,22 +154,51 @@
     /* FIXME: 請問要怎麼讓 icon 們能垂直置中呢？目前偏上，但加了 vertical-align:middle 反而沒有置中還整個偏下 */
     .icon {
       @include create-icon(48px, 48px);
+      @include pad {
+        @include create-icon(24px, 24px);
+      }
     }
   }
+
+  /* FIXME: 為什麼寫在這裡，瀏覽器就會把 bgsize 給刪掉呢？ */
+  // .icon {
+  //   width: 24px;
+  //   height: 24px;
+  //   background-size: 24px 24px;
+  // }
 }
 
 .facebook,
 .instagram {
   margin-right: 32px;
+  @include pad {
+    margin-right: 24px;
+  }
 }
 
 .footer-main {
   margin-top: 36px;
+  @include pad {
+    margin-top: 18px;
+  }
+  @include phone {
+    order: -1;
+    margin-top: 0;
+  }
 }
 
 .contact-us {
   font-size: 36px;
   padding-bottom: 24px;
+
+  @include pad {
+    font-size: 20px;
+    padding-bottom: 20px;
+  }
+  @include phone {
+    font-size: 16px;
+    padding-bottom: 24px;
+  }
 
   li {
     display: flex;
@@ -165,6 +207,11 @@
     .icon {
       @include create-icon(36px, 36px);
       margin-right: 22px;
+
+      @include pad {
+        @include create-icon(18px, 18px);
+        margin-right: 11px;
+      }
     }
   }
 
@@ -186,6 +233,18 @@
   justify-content: space-between;
   padding-top: 32px;
   border-top: 1px solid $white;
+
+  @include pad {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 24px;
+  }
+  @include phone {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    padding-top: 16px;
+  }
 }
 
 .rules {
@@ -193,8 +252,22 @@
   flex-direction: row-reverse;
   font-size: 14px;
 
+  @include pad {
+    margin-top: 36px;
+  }
+  @include phone {
+    display: block;
+    font-size: 14px;
+    margin-top: 0;
+  }
+
   li {
     margin-left: 48px;
+
+    @include phone {
+      margin-top: 8px;
+      margin-left: 0;
+    }
   }
 
   a {
@@ -204,106 +277,4 @@
 
 .copyright {
   font-size: 16px;
-}
-
-@media (max-width: 992px) {
-  .footer {
-    padding: 32px 0 21px 0;
-  }
-
-  .footer-top {
-    .menu {
-      li:not(:first-child) {
-        margin-left: 40px;
-      }
-    }
-
-    .media {
-      .icon {
-        @include create-icon(24px, 24px);
-      }
-    }
-  }
-
-  /* FIXME: 為什麼寫在這裡，瀏覽器就會把 bgsize 給刪掉呢？ */
-  // .icon {
-  //   width: 24px;
-  //   height: 24px;
-  //   background-size: 24px 24px;
-  // }
-
-  .facebook,
-  .instagram {
-    margin-right: 24px;
-  }
-
-  .footer-main {
-    margin-top: 18px;
-  }
-
-  .contact-us {
-    font-size: 20px;
-    padding-bottom: 20px;
-
-    li .icon {
-      @include create-icon(18px, 18px);
-      margin-right: 11px;
-    }
-  }
-
-  .footer-foot {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 24px;
-  }
-
-  .rules {
-    margin-top: 36px;
-  }
-}
-
-@media (max-width: 767px) {
-  .footer {
-    padding: 24px 0;
-
-    .container {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-  }
-
-  .footer-main {
-    order: -1;
-    margin-top: 0;
-  }
-
-  .footer-top {
-    .menu {
-      display: none;
-    }
-  }
-
-  .contact-us {
-    font-size: 16px;
-    padding-bottom: 24px;
-  }
-
-  .footer-foot {
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    padding-top: 16px;
-  }
-
-  .rules {
-    display: block;
-    font-size: 14px;
-    margin-top: 0;
-
-    li {
-      margin-top: 8px;
-      margin-left: 0;
-    }
-  }
 }

@@ -1,6 +1,13 @@
 .h2 {
   font-size: 48px;
   font-weight: $weight-bold;
+
+  @include pad {
+    font-size: 32px;
+  }
+  @include phone {
+    font-size: 24px;
+  }
 }
 
 .h3 {
@@ -8,23 +15,16 @@
   font-weight: $weight-bold;
 }
 
-@media (max-width: 992px) {
-  .h2 {
-    font-size: 32px;
-  }
-}
-
-@media (max-width: 767px) {
-  .h2 {
-    font-size: 24px;
-  }
-}
-
 /* === banner === */
 .banner {
   background: url("../images/banner.png") center center;
   background-size: cover;
   height: 840px;
+
+  @include pad {
+    background: url("../images/banner-sm.png");
+    background-size: cover; /* FIXME: 為什麼這邊還要再下一次才有效呢？照理可以繼承上面的 */
+  }
 
   /* FIXME: 為什麼 banner 下了 flex 後，container 就會縮到 p 的大小？ */
   /* display: flex; */
@@ -40,34 +40,23 @@
 
 .sub-slogan {
   font-size: 36px;
+
+  @include pad {
+    font-size: 20px;
+  }
+  @include phone {
+    font-size: 16px;
+  }
 }
 
 .slogan {
   font-size: 64px;
   font-weight: $weight-bold;
-}
 
-@media (max-width: 992px) {
-  .banner {
-    background: url("../images/banner-sm.png");
-    background-size: cover; /* FIXME: 為什麼這邊還要再下一次才有效呢？照理可以繼承上面的 */
-  }
-
-  .sub-slogan {
-    font-size: 20px;
-  }
-
-  .slogan {
+  @include pad {
     font-size: 48px;
   }
-}
-
-@media (max-width: 767px) {
-  .sub-slogan {
-    font-size: 16px;
-  }
-
-  .slogan {
+  @include phone {
     font-size: 32px;
   }
 }
@@ -91,9 +80,20 @@
   margin-top: 48px;
   row-gap: 44px; /* 每行距離 */
 
+  @include phone {
+    justify-content: center;
+    row-gap: 40px;
+  }
+
   .h3 {
     margin-top: 48px;
     color: $text-primary;
+  }
+
+  li {
+    @include phone {
+      width: 100%;
+    }
   }
 
   img {
@@ -104,22 +104,8 @@
     width: 255px;
     text-align: justify;
     margin-top: 8px;
-  }
-}
 
-@media (max-width: 992px) {
-}
-
-@media (max-width: 767px) {
-  .services {
-    justify-content: center;
-    row-gap: 40px;
-
-    li {
-      width: 100%;
-    }
-
-    p {
+    @include phone {
       @include horizontal-center;
       margin-top: 8px;
     }
@@ -134,35 +120,65 @@
   .container > .h2 {
     margin-top: 60px;
     color: $text-primary;
+
+    @include phone {
+      margin-top: 32px;
+    }
   }
 
   .products {
     margin-top: 40px;
+
+    @include phone {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+
+      @include phone {
+        @include text-on-image-center(parent);
+      }
+    }
+
+    img {
+      /* FIXME: 為什麼這邊設寬 635、高 320，跟在 HTML img width=635 height=320 顯示起來不一樣？ 而且只能設 width，高不能寫死，高要用 auto 才會正常？ */
+      margin-right: 30px;
+      width: 635px;
+      height: auto;
+
+      @include pad {
+        width: 390px;
+        height: auto;
+      }
+      @include phone {
+        margin-right: 0;
+      }
+    }
 
     .h2 {
       font-style: italic;
       font-weight: $weight-black;
       white-space: nowrap; /* 文字不換行 */
       color: $text-alert;
+
+      @include pad {
+        font-size: 28px;
+      }
+      @include phone {
+        @include text-on-image-center(child);
+      }
     }
 
     .icon {
-      @include create-icon(32px, 32px);
-      display: inline-block;
+      @include create-icon(32px, 32px) {
+        display: inline-block;
+      }
       margin-right: 10px;
     }
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-  }
-
-  img {
-    /* FIXME: 為什麼這邊設寬 635、高 320，跟在 HTML img width=635 height=320 顯示起來不一樣？ 而且只能設 width，高不能寫死，高要用 auto 才會正常？ */
-    margin-right: 30px;
-    width: 635px;
-    height: auto;
   }
 }
 
@@ -174,56 +190,14 @@
 .product-sunglasses {
   flex-direction: row-reverse;
 
+  @include pad {
+    flex-direction: row;
+  }
+
   img {
     margin-left: 30px;
-  }
-}
-
-@media (max-width: 992px) {
-  .classic {
-    img {
-      width: 390px;
-      height: auto;
-    }
-
-    .products {
-      .h2 {
-        font-size: 28px;
-      }
-    }
-  }
-
-  .product-sunglasses {
-    flex-direction: row;
-
-    img {
+    @include pad {
       margin-left: 0;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .classic {
-    .container > .h2 {
-      margin-top: 32px;
-    }
-
-    .products {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-
-      li {
-        @include text-on-image-center(parent);
-      }
-
-      img {
-        margin-right: 0;
-      }
-
-      .h2 {
-        @include text-on-image-center(child);
-      }
     }
   }
 }
@@ -237,16 +211,30 @@
   text-align: center;
   color: $text-white;
 
+  @include phone {
+    margin-top: 40px;
+    padding-top: 32px;
+  }
+
   .products {
     display: flex;
     justify-content: space-between;
     margin-top: 40px;
     color: $text-alert;
 
+    @include phone {
+      flex-direction: column;
+      margin-top: 20px;
+    }
+
     li {
       width: 49%;
       @include text-on-image-center(parent);
       background: $white;
+
+      @include phone {
+        width: 100%;
+      }
     }
 
     a {
@@ -260,12 +248,28 @@
 
       line-height: 455px;
       font-weight: bold;
+
+      @include pad {
+        height: 278px;
+        line-height: 278px;
+      }
+      @include phone {
+        height: 278px;
+        line-height: 278px;
+      }
     }
 
     p {
       font-size: 72px;
       width: 100%;
       @include text-on-image-center(child);
+
+      @include pad {
+        font-size: 32px;
+      }
+      @include phone {
+        font-size: 32px;
+      }
     }
   }
 }
@@ -274,51 +278,12 @@
   background: url("../images/product-8.png") center center;
 }
 
-.brand-2 a {
-  background: url("../images/product-9.png") center center;
-}
-
-@media (max-width: 992px) {
-  .co-branded {
-    .products {
-      a {
-        height: 278px;
-        line-height: 278px;
-      }
-
-      p {
-        font-size: 32px;
-      }
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .co-branded {
-    margin-top: 40px;
-    padding-top: 32px;
-
-    .products {
-      flex-direction: column;
-      margin-top: 20px;
-
-      li {
-        width: 100%;
-      }
-
-      a {
-        height: 278px;
-        line-height: 278px;
-      }
-
-      p {
-        font-size: 32px;
-      }
-    }
-  }
-
-  .brand-2 {
+.brand-2 {
+  @include phone {
     margin-top: 16px;
+  }
+  a {
+    background: url("../images/product-9.png") center center;
   }
 }
 
@@ -326,6 +291,11 @@
 .recommendations {
   padding-top: 60px;
   padding-bottom: 80px;
+
+  @include phone {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
 
   .h2 {
     text-align: center;
@@ -340,12 +310,30 @@
   margin-top: 40px;
   row-gap: 40px;
 
+  @include pad {
+    justify-content: space-evenly;
+    row-gap: 32px;
+  }
+  @include phone {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 16px;
+  }
+
   li {
     width: 24%;
     max-width: 255px;
     height: 460px;
     border: 1px solid #dee2e6;
     box-shadow: 0px 2px 6px #00000029;
+
+    @include pad {
+      width: 49%;
+      max-width: 330px;
+    }
+    @include phone {
+      width: 100%;
+    }
   }
 
   img {
@@ -378,46 +366,27 @@
   }
 }
 
-@media (max-width: 992px) {
-  .cards {
-    justify-content: space-evenly;
-    row-gap: 32px;
-
-    li {
-      width: 49%;
-      max-width: 330px;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .recommendations {
-    padding-top: 32px;
-    padding-bottom: 40px;
-  }
-
-  .cards {
-    flex-direction: column;
-    align-items: center;
-    row-gap: 16px;
-  }
-
-  .cards {
-    li {
-      width: 100%;
-    }
-  }
-}
-
 /* === contact === */
 .contact {
   padding-top: 60px;
   padding-bottom: 80px;
   background-color: $bg-secondary;
 
+  @include phone {
+    padding-top: 30px;
+    padding-bottom: 40px;
+  }
+
   .container {
     width: 58%;
     max-width: 730px;
+
+    @include pad {
+      width: 69%;
+    }
+    @include phone {
+      width: 100%;
+    }
   }
 
   .h2 {
@@ -437,6 +406,15 @@
     font-size: 16px;
     background-color: $bg-primary;
     color: $text-white;
+
+    @include pad {
+      padding: 10px 77px;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    @include phone {
+      padding: 8px 55px;
+    }
   }
 }
 
@@ -466,34 +444,5 @@
 
   input {
     margin-right: 4px;
-  }
-}
-
-@media (max-width: 992px) {
-  .contact {
-    .container {
-      width: 69%;
-    }
-
-    button {
-      padding: 10px 77px;
-      margin-top: 20px;
-      font-size: 14px;
-    }
-  }
-}
-
-@media (max-width: 767px) {
-  .contact {
-    padding-top: 30px;
-    padding-bottom: 40px;
-
-    .container {
-      width: 100%;
-    }
-
-    button {
-      padding: 8px 55px;
-    }
   }
 }
