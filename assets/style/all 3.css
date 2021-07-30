@@ -1,0 +1,1104 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* rwd img css，可當作是 CSS Reset 其中一個 */
+img, video {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  /* 會比 display: block 更合適，因有時候圖片不需要 block */ }
+
+/* 全域 border box */
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+/* 水平置中效果 */
+/* 圖片取代文字: 文字不顯示在頁面但實際上依舊存在 */
+body {
+  font-size: 20px;
+  line-height: 1.5; }
+
+a {
+  text-decoration: none; }
+
+.icon.diamond {
+  background: url("../images/icon-diamond.svg"); }
+
+.icon.diamond-black {
+  background: url("../images/icon-diamond-black.svg"); }
+
+.icon.sun {
+  background: url("../images/icon-sun.svg"); }
+
+.icon.sun-black {
+  background: url("../images/icon-sun-black.svg"); }
+
+.icon.thunder {
+  background: url("../images/icon-thunder.svg"); }
+
+.icon.thunder-black {
+  background: url("../images/icon-thunder-black.svg"); }
+
+.icon.facebook {
+  background: url("../images/icon-fb.svg"); }
+
+.icon.instagram {
+  background: url("../images/icon-ig.svg"); }
+
+.icon.line {
+  background: url("../images/icon-line.svg"); }
+
+.icon.phone {
+  background: url("../images/icon-phone.svg"); }
+
+.icon.mail {
+  background: url("../images/icon-mail.svg"); }
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px; }
+  @media (max-width: 992px) {
+    .container {
+      max-width: 720px;
+      padding-left: 39px;
+      padding-right: 39px; } }
+  @media (max-width: 767px) {
+    .container {
+      max-width: 360px;
+      padding-left: 15px;
+      padding-right: 15px; } }
+
+/* === header === */
+.header {
+  padding: 30px 88px;
+  background-color: #aa0601; }
+  @media (max-width: 992px) {
+    .header {
+      padding-left: 39px;
+      padding-right: 39px; } }
+  @media (max-width: 767px) {
+    .header {
+      padding: 0 0; } }
+  .header .content-box {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    @media (max-width: 767px) {
+      .header .content-box {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; } }
+  .header .logo a {
+    display: block;
+    text-indent: 101%;
+    /* 首行縮排 */
+    white-space: nowrap;
+    /* 自動隱藏超出的文字或圖片 */
+    overflow: hidden;
+    /* 使元素在第一排上面，不斷行 */
+    background: url("../images/logo.png");
+    width: 80px;
+    height: 49px; }
+    @media (max-width: 767px) {
+      .header .logo a {
+        display: block;
+        width: 48px;
+        height: 29px;
+        /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+        background-size: 48px 29px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        margin-bottom: 10px; } }
+  .header .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+    @media (max-width: 767px) {
+      .header .menu {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        text-align: center; } }
+    .header .menu li a {
+      display: block;
+      text-decoration: none;
+      line-height: 49px;
+      /* 與 logo 一樣高，等同於文字置中效果，若沒設雖然整個 a 因 ai:s 撐開，但文字卻向上靠 */
+      /* padding: 0 10px;*/
+      /* 點擊範圍左右擴大一點 */
+      color: #fff; }
+    @media (max-width: 767px) {
+      .header .menu li {
+        width: 50%;
+        padding: 8px 0px;
+        border: 1px solid #fff; } }
+
+.link-products,
+.link-places,
+.link-blogs {
+  margin-right: 64px; }
+  @media (max-width: 992px) {
+    .link-products,
+    .link-places,
+    .link-blogs {
+      margin-right: 40px; } }
+  @media (max-width: 767px) {
+    .link-products,
+    .link-places,
+    .link-blogs {
+      margin-right: 0; } }
+
+/* === footer === */
+.footer {
+  padding: 32px 0 39px 0;
+  background-color: #aa0601;
+  color: #fff; }
+  .footer a {
+    color: #fff; }
+  @media (max-width: 992px) {
+    .footer {
+      padding: 32px 0 21px 0; } }
+  @media (max-width: 767px) {
+    .footer {
+      padding: 24px 0; } }
+  @media (max-width: 767px) {
+    .footer .container {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; } }
+
+.footer-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  /* FIXME: 為什麼寫在這裡，瀏覽器就會把 bgsize 給刪掉呢？ */ }
+  .footer-top .menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    @media (max-width: 767px) {
+      .footer-top .menu {
+        display: none; } }
+    .footer-top .menu li:not(:first-child) {
+      margin-left: 48px; }
+      @media (max-width: 992px) {
+        .footer-top .menu li:not(:first-child) {
+          margin-left: 40px; } }
+    .footer-top .menu a {
+      display: block;
+      text-decoration: none; }
+  .footer-top .media {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    /* FIXME: 請問要怎麼讓 icon 們能垂直置中呢？目前偏上，但加了 vertical-align:middle 反而沒有置中還整個偏下 */ }
+    .footer-top .media .icon {
+      display: block;
+      width: 48px;
+      height: 48px;
+      /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+      background-size: 48px 48px; }
+      @media (max-width: 992px) {
+        .footer-top .media .icon {
+          display: block;
+          width: 24px;
+          height: 24px;
+          /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+          background-size: 24px 24px; } }
+
+.facebook,
+.instagram {
+  margin-right: 32px; }
+  @media (max-width: 992px) {
+    .facebook,
+    .instagram {
+      margin-right: 24px; } }
+
+.footer-main {
+  margin-top: 36px; }
+  @media (max-width: 992px) {
+    .footer-main {
+      margin-top: 18px; } }
+  @media (max-width: 767px) {
+    .footer-main {
+      -webkit-box-ordinal-group: 0;
+          -ms-flex-order: -1;
+              order: -1;
+      margin-top: 0; } }
+
+.contact-us {
+  font-size: 36px;
+  padding-bottom: 24px;
+  /* FIXME: 為什麼寫在這裡，瀏覽器就會把 bgsize 給刪掉呢？ */ }
+  @media (max-width: 992px) {
+    .contact-us {
+      font-size: 20px;
+      padding-bottom: 20px; } }
+  @media (max-width: 767px) {
+    .contact-us {
+      font-size: 16px;
+      padding-bottom: 24px; } }
+  .contact-us li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .contact-us li .icon {
+      display: block;
+      width: 36px;
+      height: 36px;
+      /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+      background-size: 36px 36px;
+      margin-right: 22px; }
+      @media (max-width: 992px) {
+        .contact-us li .icon {
+          display: block;
+          width: 18px;
+          height: 18px;
+          /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+          background-size: 18px 18px;
+          margin-right: 11px; } }
+  .contact-us a {
+    text-decoration: none; }
+
+.footer-foot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid #fff; }
+  @media (max-width: 992px) {
+    .footer-foot {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      padding-top: 24px; } }
+  @media (max-width: 767px) {
+    .footer-foot {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-pack: start;
+          -ms-flex-pack: start;
+              justify-content: flex-start;
+      width: 100%;
+      padding-top: 16px; } }
+
+.rules {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  font-size: 14px; }
+  @media (max-width: 992px) {
+    .rules {
+      margin-top: 36px; } }
+  @media (max-width: 767px) {
+    .rules {
+      display: block;
+      font-size: 14px;
+      margin-top: 0; } }
+  .rules li {
+    margin-left: 48px; }
+    @media (max-width: 767px) {
+      .rules li {
+        margin-top: 8px;
+        margin-left: 0; } }
+  .rules a {
+    text-decoration: none; }
+
+.copyright {
+  font-size: 16px; }
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 96px;
+  margin-bottom: 160px;
+  font-size: 18px; }
+  @media (max-width: 992px) {
+    .pagination {
+      margin-top: 65px;
+      margin-bottom: 96px; } }
+  @media (max-width: 767px) {
+    .pagination {
+      margin-top: 40px;
+      margin-bottom: 56px;
+      font-size: 16px; } }
+  .pagination li {
+    border: 1px solid #555555; }
+  .pagination a {
+    display: block;
+    color: #000; }
+  .pagination .pre-page a,
+  .pagination .next-page a {
+    padding: 11px 12px; }
+  .pagination .next-page {
+    background: #f2f2f2; }
+  .pagination .page a {
+    padding: 12px 16px; }
+  .pagination .page:nth-child(3) a {
+    background: #000;
+    color: #fff; }
+
+.h2 {
+  font-size: 48px;
+  font-weight: 700; }
+  @media (max-width: 992px) {
+    .h2 {
+      font-size: 32px; } }
+  @media (max-width: 767px) {
+    .h2 {
+      font-size: 24px; } }
+
+.h3 {
+  font-size: 24px;
+  font-weight: 700; }
+
+/* === banner === */
+.banner {
+  background: url("../images/banner.png") center center;
+  background-size: cover;
+  height: 840px;
+  /* FIXME: 為什麼 banner 下了 flex 後，container 就會縮到 p 的大小？ */
+  /* display: flex; */ }
+  @media (max-width: 992px) {
+    .banner {
+      background: url("../images/banner-sm.png");
+      background-size: cover;
+      /* FIXME: 為什麼這邊還要再下一次才有效呢？照理可以繼承上面的 */ } }
+  .banner .container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    color: #650300; }
+
+.sub-slogan {
+  font-size: 36px; }
+  @media (max-width: 992px) {
+    .sub-slogan {
+      font-size: 20px; } }
+  @media (max-width: 767px) {
+    .sub-slogan {
+      font-size: 16px; } }
+
+.slogan {
+  font-size: 64px;
+  font-weight: 700; }
+  @media (max-width: 992px) {
+    .slogan {
+      font-size: 48px; } }
+  @media (max-width: 767px) {
+    .slogan {
+      font-size: 32px; } }
+
+/* === brief === */
+.brief {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  text-align: center;
+  background-color: #aa06010d; }
+  .brief .h2 {
+    color: #650300; }
+
+.services {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 48px;
+  row-gap: 44px;
+  /* 每行距離 */ }
+  @media (max-width: 767px) {
+    .services {
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      row-gap: 40px; } }
+  .services .h3 {
+    margin-top: 48px;
+    color: #650300; }
+  @media (max-width: 767px) {
+    .services li {
+      width: 100%; } }
+  .services img {
+    height: 83px;
+    width: 100%;
+    /* 以父層的 100% 作為寬度 */
+    -o-object-fit: contain;
+       object-fit: contain;
+    /* 為防止圖片變形，圖片完整且剛好放進去框框裡 */ }
+  .services p {
+    width: 255px;
+    text-align: justify;
+    margin-top: 8px; }
+    @media (max-width: 767px) {
+      .services p {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 8px; } }
+
+/* === classic ===*/
+.classic {
+  text-align: center;
+  text-transform: uppercase;
+  /* 轉成大寫 */ }
+  .classic .container > .h2 {
+    margin-top: 60px;
+    color: #650300; }
+    @media (max-width: 767px) {
+      .classic .container > .h2 {
+        margin-top: 32px; } }
+  .classic .products {
+    margin-top: 40px; }
+    @media (max-width: 767px) {
+      .classic .products {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center; } }
+    .classic .products li {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      @media (max-width: 767px) {
+        .classic .products li {
+          position: relative; } }
+    .classic .products img {
+      /* FIXME: 為什麼這邊設寬 635、高 320，跟在 HTML img width=635 height=320 顯示起來不一樣？ 而且只能設 width，高不能寫死，高要用 auto 才會正常？ */
+      margin-right: 30px;
+      width: 635px;
+      height: auto; }
+      @media (max-width: 992px) {
+        .classic .products img {
+          width: 390px;
+          height: auto; } }
+      @media (max-width: 767px) {
+        .classic .products img {
+          margin-right: 0; } }
+    .classic .products .h2 {
+      font-style: italic;
+      font-weight: 900;
+      white-space: nowrap;
+      /* 文字不換行 */
+      color: #aa0601; }
+      @media (max-width: 992px) {
+        .classic .products .h2 {
+          font-size: 28px; } }
+      @media (max-width: 767px) {
+        .classic .products .h2 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%);
+          /* 位移置中物件自身寬與高的 50%，不要忘了本身文字還有高度，要大概算一下扣除！ */ } }
+    .classic .products .icon {
+      display: block;
+      width: 32px;
+      height: 32px;
+      /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+      background-size: 32px 32px;
+      display: inline-block;
+      margin-right: 10px; }
+
+.product-sunglasses,
+.product-functional {
+  margin-top: 32px; }
+
+.product-sunglasses {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+  @media (max-width: 992px) {
+    .product-sunglasses {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
+  .product-sunglasses img {
+    margin-left: 30px; }
+    @media (max-width: 992px) {
+      .product-sunglasses img {
+        margin-left: 0; } }
+
+/* === co-branded === */
+.co-branded {
+  background: url("../images/bg.png") center center;
+  margin-top: 80px;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  text-align: center;
+  color: #fff; }
+  @media (max-width: 767px) {
+    .co-branded {
+      margin-top: 40px;
+      padding-top: 32px; } }
+  .co-branded .products {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 40px;
+    color: #aa0601; }
+    @media (max-width: 767px) {
+      .co-branded .products {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        margin-top: 20px; } }
+    .co-branded .products li {
+      width: 49%;
+      position: relative;
+      background: #fff; }
+      @media (max-width: 767px) {
+        .co-branded .products li {
+          width: 100%; } }
+    .co-branded .products a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      height: 455px;
+      background-size: cover;
+      /* 圖片大於要放的框 */
+      opacity: 0.7;
+      line-height: 455px;
+      font-weight: bold; }
+      @media (max-width: 992px) {
+        .co-branded .products a {
+          height: 278px;
+          line-height: 278px; } }
+      @media (max-width: 767px) {
+        .co-branded .products a {
+          height: 278px;
+          line-height: 278px; } }
+    .co-branded .products p {
+      font-size: 72px;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      /* 位移置中物件自身寬與高的 50%，不要忘了本身文字還有高度，要大概算一下扣除！ */ }
+      @media (max-width: 992px) {
+        .co-branded .products p {
+          font-size: 32px; } }
+      @media (max-width: 767px) {
+        .co-branded .products p {
+          font-size: 32px; } }
+
+.brand-1 a {
+  background: url("../images/product-8.png") center center; }
+
+@media (max-width: 767px) {
+  .brand-2 {
+    margin-top: 16px; } }
+
+.brand-2 a {
+  background: url("../images/product-9.png") center center; }
+
+/* === recommendations === */
+.recommendations {
+  padding-top: 60px;
+  padding-bottom: 80px; }
+  @media (max-width: 767px) {
+    .recommendations {
+      padding-top: 32px;
+      padding-bottom: 40px; } }
+  .recommendations .h2 {
+    text-align: center;
+    color: #650300; }
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-top: 40px;
+  row-gap: 40px; }
+  @media (max-width: 992px) {
+    .cards {
+      -webkit-box-pack: space-evenly;
+          -ms-flex-pack: space-evenly;
+              justify-content: space-evenly;
+      row-gap: 32px; } }
+  @media (max-width: 767px) {
+    .cards {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      row-gap: 16px; } }
+  .cards li {
+    width: 24%;
+    max-width: 255px;
+    height: 460px;
+    border: 1px solid #dee2e6;
+    -webkit-box-shadow: 0px 2px 6px #00000029;
+            box-shadow: 0px 2px 6px #00000029; }
+    @media (max-width: 992px) {
+      .cards li {
+        width: 49%;
+        max-width: 330px; } }
+    @media (max-width: 767px) {
+      .cards li {
+        width: 100%; } }
+  .cards img {
+    height: 256px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    /* 保持圖片長寬比，並裁剪至適合的大小中 */ }
+
+.cards-content {
+  height: calc(100% - 256px);
+  /* 扣掉上面 img 剩下的 */
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .cards-content .name {
+    font-size: 14px;
+    line-height: 21px; }
+  .cards-content .comment {
+    font-size: 16px;
+    margin-top: 8px; }
+  .cards-content .date {
+    font-size: 14px;
+    line-height: 21px;
+    color: #707070; }
+
+/* === contact === */
+.contact {
+  padding-top: 60px;
+  padding-bottom: 80px;
+  background-color: #aa06010d; }
+  @media (max-width: 767px) {
+    .contact {
+      padding-top: 30px;
+      padding-bottom: 40px; } }
+  .contact .container {
+    width: 58%;
+    max-width: 730px; }
+    @media (max-width: 992px) {
+      .contact .container {
+        width: 69%; } }
+    @media (max-width: 767px) {
+      .contact .container {
+        width: 100%; } }
+  .contact .h2 {
+    text-align: center; }
+  .contact p {
+    margin-top: 24px; }
+  .contact button {
+    display: block;
+    padding: 16px 143px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    border: none;
+    font-size: 16px;
+    background-color: #aa0601;
+    color: #fff; }
+    @media (max-width: 992px) {
+      .contact button {
+        padding: 10px 77px;
+        margin-top: 20px;
+        font-size: 14px; } }
+    @media (max-width: 767px) {
+      .contact button {
+        padding: 8px 55px; } }
+
+.form {
+  font-size: 16px; }
+
+.form-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 16px; }
+  .form-text input {
+    height: 50px; }
+  .form-text input,
+  .form-text textarea {
+    background-color: transparent;
+    border: 1px solid #000; }
+
+.form-check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 16px; }
+  .form-check input {
+    margin-right: 4px; }
+
+.products-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 32px;
+  font-weight: 500;
+  text-transform: uppercase;
+  /* 轉成大寫 */ }
+  @media (max-width: 992px) {
+    .products-menu {
+      font-size: 24px; } }
+  @media (max-width: 767px) {
+    .products-menu {
+      font-size: 14px; } }
+  .products-menu .icon {
+    display: inline-block;
+    display: block;
+    width: 48px;
+    height: 48px;
+    /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+    background-size: 48px 48px; }
+    @media (max-width: 992px) {
+      .products-menu .icon {
+        display: block;
+        width: 29px;
+        height: 29px;
+        /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+        background-size: 29px 29px; } }
+    @media (max-width: 767px) {
+      .products-menu .icon {
+        display: block;
+        width: 15px;
+        height: 15px;
+        /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+        background-size: 15px 15px; } }
+  .products-menu li a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 26px;
+    padding-bottom: 18px;
+    color: #000;
+    border-bottom: 8px solid #fff;
+    border-left: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc; }
+    @media (max-width: 992px) {
+      .products-menu li a {
+        padding-top: 14px;
+        padding-bottom: 14px;
+        border-bottom: 8px solid #fff; } }
+    @media (max-width: 767px) {
+      .products-menu li a {
+        padding-top: 6px;
+        padding-bottom: 1px;
+        border-bottom: 4px solid #fff; } }
+    .products-menu li a.active, .products-menu li a:hover {
+      border-bottom: 8px solid #aa0601; }
+      @media (max-width: 767px) {
+        .products-menu li a.active, .products-menu li a:hover {
+          border-bottom: 1px solid #aa0601; } }
+  .products-menu .optical a {
+    padding-left: 92px;
+    padding-right: 92px; }
+    @media (max-width: 992px) {
+      .products-menu .optical a {
+        padding-left: 47px;
+        padding-right: 46px; } }
+    @media (max-width: 767px) {
+      .products-menu .optical a {
+        padding-left: 20px;
+        padding-right: 19px; } }
+  .products-menu .optical span {
+    margin-left: 8px; }
+    @media (max-width: 992px) {
+      .products-menu .optical span {
+        margin-left: 9px; } }
+    @media (max-width: 767px) {
+      .products-menu .optical span {
+        margin-left: 2px; } }
+  .products-menu .sunglasses a {
+    padding-left: 59px;
+    padding-right: 57px; }
+    @media (max-width: 992px) {
+      .products-menu .sunglasses a {
+        padding-left: 21px;
+        padding-right: 20px; } }
+    @media (max-width: 767px) {
+      .products-menu .sunglasses a {
+        padding-left: 5px;
+        padding-right: 5px; } }
+  .products-menu .sunglasses span {
+    margin-left: 10px; }
+    @media (max-width: 992px) {
+      .products-menu .sunglasses span {
+        margin-left: 9px; } }
+    @media (max-width: 767px) {
+      .products-menu .sunglasses span {
+        margin-left: 2px; } }
+  .products-menu .functional a {
+    padding-left: 68px;
+    padding-right: 67px; }
+    @media (max-width: 992px) {
+      .products-menu .functional a {
+        padding-left: 22px;
+        padding-right: 22px; } }
+    @media (max-width: 767px) {
+      .products-menu .functional a {
+        padding-left: 6px;
+        padding-right: 7px; } }
+  .products-menu .functional span {
+    margin-left: 4px; }
+    @media (max-width: 992px) {
+      .products-menu .functional span {
+        margin-left: 8px; } }
+    @media (max-width: 767px) {
+      .products-menu .functional span {
+        margin-left: 2px; } }
+
+.products-banner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  .products-banner .left {
+    background: url("../images/banner-1.png") no-repeat center center;
+    background-size: cover;
+    width: 50%;
+    height: 304px; }
+    @media (max-width: 767px) {
+      .products-banner .left {
+        height: 148px; } }
+  .products-banner .right {
+    background: url("../images/banner-2.png") no-repeat center center;
+    background-size: cover;
+    width: 50%;
+    height: 304px; }
+    @media (max-width: 767px) {
+      .products-banner .right {
+        height: 148px; } }
+
+.products-content {
+  margin-top: 80px;
+  font-size: 24px; }
+  @media (max-width: 992px) {
+    .products-content {
+      margin-top: 56px; } }
+  @media (max-width: 767px) {
+    .products-content {
+      margin-top: 32px;
+      font-size: 18px; } }
+  .products-content .title {
+    font-size: 42px;
+    text-align: center;
+    font-weight: 500; }
+  .products-content .sub-title {
+    font-size: 32px;
+    text-align: center; }
+  .products-content .list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    row-gap: 104px;
+    margin-top: 40px; }
+    @media (max-width: 992px) {
+      .products-content .list {
+        row-gap: 72px;
+        margin-top: 32px; } }
+    @media (max-width: 767px) {
+      .products-content .list {
+        row-gap: 32px;
+        margin-top: 20px; } }
+    .products-content .list li {
+      width: 23%; }
+      @media (max-width: 992px) {
+        .products-content .list li {
+          width: 48%; } }
+      @media (max-width: 767px) {
+        .products-content .list li {
+          width: 100%; } }
+    .products-content .list .img {
+      height: 164px;
+      width: 100%;
+      /* 以父層的 100% 作為寬度 */
+      -o-object-fit: contain;
+         object-fit: contain;
+      /* 為防止圖片變形，圖片完整且剛好放進去框框裡 */
+      -o-object-fit: cover;
+         object-fit: cover; }
+      .products-content .list .img img {
+        width: 100%;
+        height: 100%;
+        /* FIXME: 不加這行的話，圖片會超出 div 高度 */ }
+    .products-content .list .info-box {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .products-content .list .info-box .price {
+        color: #aa0601;
+        font-weight: 500; }
+    .products-content .list .color .icon {
+      display: block;
+      width: 24px;
+      height: 24px;
+      /* 因與原圖片大小可能不一樣，故要設定長寬才能正確顯示 */
+      background-size: 24px 24px;
+      display: inline-block; }
+    .products-content .list .color .icon-1 {
+      background: #5f3e2d; }
+    .products-content .list .color .icon-2 {
+      background: #b75929; }
+
+/*# sourceMappingURL=all.css.map */
