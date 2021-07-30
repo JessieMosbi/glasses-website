@@ -233,7 +233,7 @@
         }
       }
 
-      .color-box {
+      .color {
         .icon {
           @include create-icon(24px, 24px) {
             display: inline-block;
@@ -241,11 +241,11 @@
         }
 
         .icon-1 {
-          background: #5f3e2d 0% 0% no-repeat padding-box;
+          background: #5f3e2d;
         }
 
         .icon-2 {
-          background: #b75929 0% 0% no-repeat padding-box;
+          background: #b75929;
         }
       }
     }
