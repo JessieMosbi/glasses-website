@@ -15,12 +15,24 @@ a {
     background: url($icon-diamond);
   }
 
+  &.diamond-black {
+    background: url($icon-diamond-black);
+  }
+
   &.sun {
     background: url($icon-sun);
   }
 
+  &.sun-black {
+    background: url($icon-sun-black);
+  }
+
   &.thunder {
     background: url($icon-thunder);
+  }
+
+  &.thunder-black {
+    background: url($icon-thunder-black);
   }
 
   &.facebook {

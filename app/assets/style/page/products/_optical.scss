@@ -1,0 +1,253 @@
+.products {
+  &-menu {
+    display: flex;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: $weight-medium;
+    text-transform: uppercase; /* 轉成大寫 */
+
+    @include pad {
+      font-size: 24px;
+    }
+    @include phone {
+      font-size: 14px;
+    }
+
+    .icon {
+      display: inline-block;
+      @include create-icon(48px, 48px);
+
+      @include pad {
+        @include create-icon(29px, 29px);
+      }
+      @include phone {
+        @include create-icon(15px, 15px);
+      }
+    }
+
+    li {
+      a {
+        display: flex;
+        align-items: center;
+        padding-top: 26px;
+        padding-bottom: 18px;
+        color: $black;
+        border-bottom: 8px solid $white;
+        border-left: 1px solid #dcdcdc;
+        border-right: 1px solid #dcdcdc;
+
+        @include pad {
+          padding-top: 14px;
+          padding-bottom: 14px;
+          border-bottom: 8px solid $white;
+        }
+        @include phone {
+          padding-top: 6px;
+          padding-bottom: 1px;
+          border-bottom: 4px solid $white;
+        }
+
+        &:hover {
+          border-bottom: 8px solid $red-1;
+          @include phone {
+            border-bottom: 1px solid $red-1;
+          }
+        }
+      }
+    }
+
+    .optical {
+      a {
+        padding-left: 92px;
+        padding-right: 92px;
+
+        @include pad {
+          padding-left: 47px;
+          padding-right: 46px;
+        }
+        @include phone {
+          padding-left: 20px;
+          padding-right: 19px;
+        }
+      }
+
+      span {
+        margin-left: 8px;
+        @include pad {
+          margin-left: 9px;
+        }
+        @include phone {
+          margin-left: 2px;
+        }
+      }
+    }
+
+    .sunglasses {
+      a {
+        padding-left: 59px;
+        padding-right: 57px;
+
+        @include pad {
+          padding-left: 21px;
+          padding-right: 20px;
+        }
+        @include phone {
+          padding-left: 5px;
+          padding-right: 5px;
+        }
+      }
+
+      span {
+        margin-left: 10px;
+        @include pad {
+          margin-left: 9px;
+        }
+        @include phone {
+          margin-left: 2px;
+        }
+      }
+    }
+
+    .functional {
+      a {
+        padding-left: 68px;
+        padding-right: 67px;
+
+        @include pad {
+          padding-left: 22px;
+          padding-right: 22px;
+        }
+        @include phone {
+          padding-left: 6px;
+          padding-right: 7px;
+        }
+      }
+
+      span {
+        margin-left: 4px;
+        @include pad {
+          margin-left: 8px;
+        }
+        @include phone {
+          margin-left: 2px;
+        }
+      }
+    }
+  }
+
+  &-banner {
+    display: flex;
+
+    .left {
+      background: url("../images/banner-1.png") no-repeat center center;
+      background-size: cover;
+      width: 50%;
+      height: 304px;
+
+      @include phone {
+        height: 148px;
+      }
+    }
+    .right {
+      background: url("../images/banner-2.png") no-repeat center center;
+      background-size: cover;
+      width: 50%;
+      height: 304px;
+
+      @include phone {
+        height: 148px;
+      }
+    }
+  }
+
+  &-content {
+    margin-top: 80px;
+    font-size: 24px;
+
+    @include pad {
+      margin-top: 56px;
+    }
+    @include phone {
+      margin-top: 32px;
+      font-size: 18px;
+    }
+
+    .title {
+      font-size: 42px;
+      text-align: center;
+      font-weight: $weight-medium;
+    }
+
+    .sub-title {
+      font-size: 32px;
+      text-align: center;
+    }
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 104px;
+      margin-top: 40px;
+
+      @include pad {
+        row-gap: 72px;
+        margin-top: 32px;
+      }
+      @include phone {
+        row-gap: 32px;
+        margin-top: 20px;
+      }
+
+      li {
+        width: 23%;
+
+        @include pad {
+          width: 48%;
+        }
+        @include phone {
+          width: 100%;
+        }
+      }
+
+      .img {
+        @include display-same-height-images(164px) {
+          object-fit: cover;
+          // object-position: center center;
+        }
+        // overflow-y: hidden;
+
+        img {
+          width: 100%;
+          height: 100%; /* FIXME: 不加這行的話，圖片會超出 div 高度 */
+        }
+      }
+
+      .info-box {
+        display: flex;
+        justify-content: space-between;
+
+        .price {
+          color: $text-alert;
+          font-weight: $weight-medium;
+        }
+      }
+
+      .color-box {
+        .icon {
+          @include create-icon(24px, 24px) {
+            display: inline-block;
+          }
+        }
+
+        .icon-1 {
+          background: #5f3e2d 0% 0% no-repeat padding-box;
+        }
+
+        .icon-2 {
+          background: #b75929 0% 0% no-repeat padding-box;
+        }
+      }
+    }
+  }
+}

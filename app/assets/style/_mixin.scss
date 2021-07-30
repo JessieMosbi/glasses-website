@@ -25,6 +25,7 @@
   height: $height;
   width: 100%; /* 以父層的 100% 作為寬度 */
   object-fit: contain; /* 為防止圖片變形，圖片完整且剛好放進去框框裡 */
+  @content;
 }
 
 @mixin text-on-image-center($type) {
