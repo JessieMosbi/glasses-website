@@ -17,17 +17,15 @@
 
 /* === banner === */
 .banner {
-  background: url("../images/banner.png") center center;
+  background-image: url("../images/banner.png");
+  background-position: center center;
   background-size: cover;
   height: 840px;
 
   @include pad {
-    background: url("../images/banner-sm.png");
-    background-size: cover; /* FIXME: 為什麼這邊還要再下一次才有效呢？照理可以繼承上面的 */
+    background-image: url("../images/banner-sm.png");
   }
 
-  /* FIXME: 為什麼 banner 下了 flex 後，container 就會縮到 p 的大小？ */
-  /* display: flex; */
   .container {
     height: 100%;
     display: flex;
@@ -144,18 +142,13 @@
       }
     }
 
-    img {
-      /* FIXME: 為什麼這邊設寬 635、高 320，跟在 HTML img width=635 height=320 顯示起來不一樣？ 而且只能設 width，高不能寫死，高要用 auto 才會正常？ */
+    a {
+      width: 57%;
       margin-right: 30px;
-      width: 635px;
-      height: auto;
 
-      @include pad {
-        width: 390px;
-        height: auto;
-      }
       @include phone {
-        margin-right: 0;
+        width: 100%;
+        margin-right: 0px;
       }
     }
 

@@ -65,7 +65,6 @@
 
     li {
       a {
-        display: block;
         text-decoration: none;
         line-height: 49px; /* 與 logo 一樣高，等同於文字置中效果，若沒設雖然整個 a 因 ai:s 撐開，但文字卻向上靠 */
         /* padding: 0 10px;*/ /* 點擊範圍左右擴大一點 */
@@ -142,18 +141,12 @@
         }
       }
     }
-
-    a {
-      display: block;
-      text-decoration: none;
-    }
   }
 
   .media {
     display: flex;
     justify-content: space-between;
 
-    /* FIXME: 請問要怎麼讓 icon 們能垂直置中呢？目前偏上，但加了 vertical-align:middle 反而沒有置中還整個偏下 */
     .icon {
       @include create-icon(48px, 48px);
       @include pad {
@@ -270,10 +263,6 @@
       margin-top: 8px;
       margin-left: 0;
     }
-  }
-
-  a {
-    text-decoration: none;
   }
 }
 
