@@ -1,11 +1,14 @@
-@import "variable"; // 變數
-@import "reset"; // reset
-@import "mixin"; // mixin
-@import "grid"; // 斷點
-@import "base"; // 全站樣式
-@import "layout"; // 共同區塊
-@import "module"; // 常用樣式 button, form, table...
+// config
+@import "./config/variable"; // 變數
+@import "./config/reset"; // reset
+@import "./config/mixin"; // mixin
+@import "./config/grid"; // 斷點
+@import "./config/base"; // 全站樣式
+@import "./config/module"; // 常用樣式 button, form, table...
+
+// layout
+@import "./layout/layout"; // 共同區塊
 
 // page
-@import "page/index"; // 首頁
-@import "page/products/optical"; // 系列鏡框 - OPTICAL
+@import "./page/index"; // 首頁
+@import "./page/products/optical"; // 系列鏡框 - OPTICAL
