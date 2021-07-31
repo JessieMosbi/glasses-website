@@ -89,6 +89,10 @@
   }
 
   li {
+    width: 23%;
+    @include pad-phone {
+      width: 48%;
+    }
     @include phone {
       width: 100%;
     }
@@ -99,7 +103,7 @@
   }
 
   p {
-    width: 255px;
+    // width: 255px;
     text-align: justify;
     margin-top: 8px;
 

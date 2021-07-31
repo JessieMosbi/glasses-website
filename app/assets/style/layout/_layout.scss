@@ -4,7 +4,7 @@
   padding-left: 15px;
   padding-right: 15px;
 
-  @include pad {
+  @include pad-phone {
     max-width: 720px;
     padding-left: 39px;
     padding-right: 39px;
@@ -127,6 +127,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 16px;
 
     @include phone {
       display: none;
@@ -252,7 +253,6 @@
   }
   @include phone {
     display: block;
-    font-size: 14px;
     margin-top: 0;
   }
 
@@ -268,4 +268,8 @@
 
 .copyright {
   font-size: 16px;
+
+  @include phone {
+    font-size: 14px;
+  }
 }
