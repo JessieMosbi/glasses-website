@@ -6,14 +6,12 @@
 
   @include pad-phone {
     max-width: 720px;
-    padding-left: 39px;
-    padding-right: 39px;
   }
 
   @include phone {
     max-width: 360px;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
   }
 }
 
@@ -69,6 +67,10 @@
         line-height: 49px; /* 與 logo 一樣高，等同於文字置中效果，若沒設雖然整個 a 因 ai:s 撐開，但文字卻向上靠 */
         /* padding: 0 10px;*/ /* 點擊範圍左右擴大一點 */
         color: $text-white;
+
+        @media (max-width: 640px) {
+          line-height: 1.5;
+        }
       }
       @media (max-width: 640px) {
         width: 50%;

@@ -9,6 +9,9 @@
     @include pad {
       font-size: 24px;
     }
+    @include pad-phone {
+      font-size: 20px;
+    }
     @include phone {
       font-size: 14px;
     }
@@ -20,14 +23,19 @@
       @include pad {
         @include create-icon(29px, 29px);
       }
+      @include pad-phone {
+        @include create-icon(20px, 20px);
+      }
       @include phone {
         @include create-icon(15px, 15px);
       }
     }
 
     li {
+      width: 33%;
       a {
         display: flex;
+        justify-content: center;
         align-items: center;
         padding-top: 26px;
         padding-bottom: 18px;
@@ -58,24 +66,13 @@
     }
 
     .optical {
-      a {
-        padding-left: 92px;
-        padding-right: 92px;
-
-        @include pad {
-          padding-left: 47px;
-          padding-right: 46px;
-        }
-        @include phone {
-          padding-left: 20px;
-          padding-right: 19px;
-        }
-      }
-
       span {
         margin-left: 8px;
         @include pad {
           margin-left: 9px;
+        }
+        @include pad-phone {
+          margin-left: 5px;
         }
         @include phone {
           margin-left: 2px;
@@ -84,24 +81,13 @@
     }
 
     .sunglasses {
-      a {
-        padding-left: 59px;
-        padding-right: 57px;
-
-        @include pad {
-          padding-left: 21px;
-          padding-right: 20px;
-        }
-        @include phone {
-          padding-left: 5px;
-          padding-right: 5px;
-        }
-      }
-
       span {
         margin-left: 10px;
         @include pad {
           margin-left: 9px;
+        }
+        @include pad-phone {
+          margin-left: 5px;
         }
         @include phone {
           margin-left: 2px;
@@ -110,24 +96,13 @@
     }
 
     .functional {
-      a {
-        padding-left: 68px;
-        padding-right: 67px;
-
-        @include pad {
-          padding-left: 22px;
-          padding-right: 22px;
-        }
-        @include phone {
-          padding-left: 6px;
-          padding-right: 7px;
-        }
-      }
-
       span {
         margin-left: 4px;
         @include pad {
           margin-left: 8px;
+        }
+        @include pad-phone {
+          margin-left: 4px;
         }
         @include phone {
           margin-left: 2px;
@@ -139,8 +114,9 @@
   &-banner {
     display: flex;
 
-    .left {
-      background: url("../images/banner-1.png") no-repeat center center;
+    li {
+      background-repeat: no-repeat;
+      background-position: center center;
       background-size: cover;
       width: 50%;
       height: 304px;
@@ -149,15 +125,12 @@
         height: 148px;
       }
     }
-    .right {
-      background: url("../images/banner-2.png") no-repeat center center;
-      background-size: cover;
-      width: 50%;
-      height: 304px;
 
-      @include phone {
-        height: 148px;
-      }
+    .left {
+      background-image: url("../images/banner-1.png");
+    }
+    .right {
+      background-image: url("../images/banner-2.png");
     }
   }
 
@@ -170,18 +143,32 @@
     }
     @include phone {
       margin-top: 32px;
-      font-size: 18px;
+      font-size: 16px;
     }
 
     .title {
       font-size: 42px;
       text-align: center;
       font-weight: $weight-medium;
+
+      @include pad {
+        font-size: 32px;
+      }
+      @include phone {
+        font-size: 20px;
+      }
     }
 
     .sub-title {
       font-size: 32px;
       text-align: center;
+
+      @include pad {
+        font-size: 24px;
+      }
+      @include phone {
+        font-size: 16px;
+      }
     }
 
     .list {
