@@ -26,7 +26,7 @@
     padding-left: 39px;
     padding-right: 39px;
   }
-  @include phone {
+  @media (max-width: 640px) {
     padding: 0 0;
   }
 
@@ -35,7 +35,7 @@
     display: flex;
     justify-content: space-between;
 
-    @include phone {
+    @media (max-width: 640px) {
       flex-direction: column;
     }
   }
@@ -46,7 +46,7 @@
     width: 80px;
     height: 49px;
 
-    @include phone {
+    @media (max-width: 640px) {
       @include create-icon(48px, 29px);
       @include horizontal-center;
       margin-top: 10px;
@@ -58,7 +58,7 @@
     display: flex;
     justify-content: space-between;
 
-    @include phone {
+    @media (max-width: 640px) {
       flex-wrap: wrap;
       text-align: center;
     }
@@ -70,7 +70,7 @@
         /* padding: 0 10px;*/ /* 點擊範圍左右擴大一點 */
         color: $text-white;
       }
-      @include phone {
+      @media (max-width: 640px) {
         width: 50%;
         padding: 8px 0px;
         border: 1px solid $white;
@@ -88,7 +88,7 @@
     margin-right: 40px;
   }
 
-  @include phone {
+  @media (max-width: 640px) {
     margin-right: 0;
   }
 }
@@ -106,12 +106,12 @@
   @include pad {
     padding: 32px 0 21px 0;
   }
-  @include phone {
+  @media (max-width: 640px) {
     padding: 24px 0;
   }
 
   .container {
-    @include phone {
+    @media (max-width: 640px) {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
@@ -129,7 +129,7 @@
     align-items: center;
     font-size: 16px;
 
-    @include phone {
+    @media (max-width: 640px) {
       display: none;
     }
 
@@ -177,7 +177,7 @@
   @include pad {
     margin-top: 18px;
   }
-  @include phone {
+  @media (max-width: 640px) {
     order: -1;
     margin-top: 0;
   }
@@ -191,7 +191,7 @@
     font-size: 20px;
     padding-bottom: 20px;
   }
-  @include phone {
+  @media (max-width: 640px) {
     font-size: 16px;
     padding-bottom: 24px;
   }
@@ -235,7 +235,7 @@
     justify-content: space-between;
     padding-top: 24px;
   }
-  @include phone {
+  @media (max-width: 640px) {
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
@@ -251,7 +251,7 @@
   @include pad {
     margin-top: 36px;
   }
-  @include phone {
+  @media (max-width: 640px) {
     display: block;
     margin-top: 0;
   }
@@ -259,7 +259,7 @@
   li {
     margin-left: 48px;
 
-    @include phone {
+    @media (max-width: 640px) {
       margin-top: 8px;
       margin-left: 0;
     }
@@ -269,7 +269,7 @@
 .copyright {
   font-size: 16px;
 
-  @include phone {
+  @media (max-width: 640px) {
     font-size: 14px;
   }
 }
