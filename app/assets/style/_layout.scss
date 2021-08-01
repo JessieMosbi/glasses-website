@@ -142,15 +142,14 @@
   .media {
     display: flex;
     justify-content: space-between;
-
-    /* FIXME: 請問要怎麼讓 icon 們能垂直置中呢？目前偏上，但加了 vertical-align:middle 反而沒有置中還整個偏下 */
-    .icon {
-      display: block;
-      width: 48px;
-      height: 48px;
-      background-size: 48px 48px;
-    }
   }
+}
+
+.icon {
+  display: block;
+  width: 48px;
+  height: 48px;
+  background-size: 48px 48px;
 }
 
 .facebook,
@@ -219,22 +218,14 @@
         margin-left: 40px;
       }
     }
-
-    .media {
-      .icon {
-        width: 24px;
-        height: 24px;
-        background-size: 24px 24px;
-      }
-    }
   }
 
   /* 為什麼寫在這裡，瀏覽器就會把 bgsize 給刪掉呢？ */
-  // .icon {
-  //   width: 24px;
-  //   height: 24px;
-  //   background-size: 24px 24px;
-  // }
+  .icon {
+    width: 24px;
+    height: 24px;
+    background-size: 24px 24px;
+  }
 
   .facebook,
   .instagram {
