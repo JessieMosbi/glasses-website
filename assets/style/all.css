@@ -132,7 +132,7 @@ table {
 /* 水平置中效果 */
 /* 圖片取代文字: 文字不顯示在頁面但實際上依舊存在 */
 body {
-  font-family: "Noto Sans TC", "Roboto", serif;
+  font-family: "Roboto", "Noto Sans TC", serif;
   font-size: 20px;
   line-height: 1.5; }
 
